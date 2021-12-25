@@ -1,3 +1,3 @@
 run:
 	@echo "👟 Running TensorFlow Quick Start 👟"
-	@python src/__main__.py
+	@poetry run python src/__main__.py
