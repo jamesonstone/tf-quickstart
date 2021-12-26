@@ -13,9 +13,9 @@ model = tf.keras.models.Sequential([ # build a keras sequential model
   tf.keras.layers.Dense(10, activation='softmax')
 ])
 
-model.compile(optimizer='adam',
-              loss='sparse_categorical_crossentropy',
-              metrics=['accuracy'])
+model.compile(optimizer='adam', # uses the adam algorithm which is described as a stochastic (random) gradient descent algorithm that is based on the idea of adaptive estimation of first-order and second-order moments. As quoted from Kingma et al, this algorithm is "computationally efficient, has little memory requirements, and is well suited for problems that are large in terms of data and parameters."
+              loss='sparse_categorical_crossentropy', # loss functions serve to reduce the error in prediction; sparse_categorical_crossentropy is used when each dataset belongs to a single class
+              metrics=['accuracy']) # metric is used to evaluate the model by way of creating two local variables: the number of correct predictions and the total number of predictions, and returning the ratio of which y_train is y_test
 
 model.fit(x_train, y_train, epochs=5)
 
